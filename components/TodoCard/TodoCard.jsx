@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native"
 import styles from "./TodoCardStyle";
+import StatusSwitch from "./StatusSwitch/StatusSwitch";
 
 const TodoCard = ({name, status}) => {
     return(
@@ -8,9 +9,7 @@ const TodoCard = ({name, status}) => {
             <Text style={styles.title}>
                 {name}
             </Text>
-            <Text style={styles.status}>
-                {status ? 'Done' : 'Due'}
-            </Text>
+            <StatusSwitch status={status} />
         </View>
     )
 }
