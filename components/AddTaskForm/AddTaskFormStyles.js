@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const AddTaskFormStyles = StyleSheet.create({
     container: {
-        paddingBottom: 75,
+        paddingBottom: 25,
         width: '100%',
         padding: '5%',
         backgroundColor: '#F0F0F0',
