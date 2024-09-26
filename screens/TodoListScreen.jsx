@@ -1,12 +1,19 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { FlatList, Text } from "react-native";
 import TodoHeader from "../components/TodoHeader/TodoHeader";
+import TodoCard from "../components/TodoCard/TodoCard";
 
-const TodoListScreen = ({ todoItems = [] }) => {
+const TodoListScreen = ({ todoItems }) => {
 
     return(
         <>
-            <TodoHeader/>
+            <FlatList
+                ListHeaderComponent={<TodoHeader/>}
+                ListEmptyComponent={<Text>Please add a task to start</Text>}
+                data={todoItems}
+                renderItem={item => <TodoCard name={item.item.name} status={item.item.status}/>}
+                keyExtractor={item => item.id}
+            />
         </>
     )
 }
