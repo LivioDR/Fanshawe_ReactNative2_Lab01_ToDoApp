@@ -1,5 +1,5 @@
 import uuid from 'react-native-uuid';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import TodoListScreen from './screens/TodoListScreen';
 import { useEffect, useState } from 'react';
 
@@ -49,10 +49,18 @@ export default function App() {
     })
   }
 
+  const addItem = (data) => {
+    setTodoItems(prev => {
+      let newList = [...prev]
+      newList.push(data)
+      return newList
+    })
+  }
+
 
   return (
     <View style={styles.container}>
-      <TodoListScreen todoItems={todoItems} remove={removeItemById} toggle={toggleItemById}/>
+      <TodoListScreen todoItems={todoItems} remove={removeItemById} toggle={toggleItemById} add={addItem}/>
     </View>
   );
 }
