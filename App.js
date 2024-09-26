@@ -1,33 +1,15 @@
-import uuid from 'react-native-uuid';
 import { StyleSheet, View } from 'react-native';
 import TodoListScreen from './screens/TodoListScreen';
-import { useEffect, useState } from 'react';
-
-const placeholder = [
-  {
-    id: uuid.v4(),
-    name: 'Test Item',
-    status: true,
-  },
-  {
-    id: uuid.v4(),
-    name: 'Test Item 2',
-    status: false,
-  },
-  {
-    id: uuid.v4(),
-    name: 'Test Item 3',
-    status: true,
-  }
-]
+import { useState } from 'react';
 
 export default function App() {
 
   const [todoItems, setTodoItems] = useState([])
 
-  useEffect(() => {
-    setTodoItems(placeholder)
-  },[])
+  // useEffect(() => {
+  //  Here I would get data from a storage 
+  //  setTodoItems() 
+  // },[])
 
   const removeItemById = (idToRemove) => {
     setTodoItems(prev => {
