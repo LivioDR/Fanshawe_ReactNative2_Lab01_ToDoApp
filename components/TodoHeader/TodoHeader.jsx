@@ -10,7 +10,9 @@ const headerStyles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center',
         width: '100%',
-        padding: '4%',
+        paddingHorizontal: '4%',
+        paddingBottom: '4%',
+        paddingTop: 50,
         backgroundColor: '#F0F0F0',
     },
     text: {
